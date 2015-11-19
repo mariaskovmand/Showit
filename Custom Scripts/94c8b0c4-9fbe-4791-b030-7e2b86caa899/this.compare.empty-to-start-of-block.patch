@@ -126,35 +126,6 @@ index 0000000..1e23ee2
 +GO
 +CREATE USER [RED-GATE\maria.skovmand] FOR LOGIN [RED-GATE\maria.skovmand]
 +GO
-diff --git a/Tables/dbo.Artists.sql b/Tables/dbo.Artists.sql
-new file mode 100644
-index 0000000..60b114c
---- /dev/null
-+++ b/Tables/dbo.Artists.sql
-@@ -0,0 +1,6 @@
-+CREATE TABLE [dbo].[Artists]
-+(
-+[ArtistId] [int] NOT NULL IDENTITY(1, 10),
-+[ArtistName] [varchar] (255) COLLATE Latin1_General_CI_AS NULL
-+) ON [PRIMARY]
-+GO
-diff --git a/Tables/dbo.Shows.sql b/Tables/dbo.Shows.sql
-new file mode 100644
-index 0000000..936f005
---- /dev/null
-+++ b/Tables/dbo.Shows.sql
-@@ -0,0 +1,11 @@
-+CREATE TABLE [dbo].[Shows]
-+(
-+[ShowId] [int] NOT NULL IDENTITY(1, 10),
-+[StageId] [int] NULL,
-+[ArtistId] [int] NULL
-+) ON [PRIMARY]
-+GO
-+ALTER TABLE [dbo].[Shows] ADD CONSTRAINT [PK__Shows__6DE3E0B2719DB204] PRIMARY KEY CLUSTERED  ([ShowId]) ON [PRIMARY]
-+GO
-+ALTER TABLE [dbo].[Shows] ADD CONSTRAINT [fk_StageId] FOREIGN KEY ([StageId]) REFERENCES [dbo].[Stages] ([StageId])
-+GO
 diff --git a/Tables/dbo.Stages.sql b/Tables/dbo.Stages.sql
 new file mode 100644
 index 0000000..dcafd2d
