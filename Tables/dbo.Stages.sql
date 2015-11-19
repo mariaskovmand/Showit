@@ -1,0 +1,8 @@
+CREATE TABLE [dbo].[Stages]
+(
+[StageId] [int] NOT NULL IDENTITY(1, 10),
+[StageName] [varchar] (255) COLLATE Latin1_General_CI_AS NOT NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Stages] ADD CONSTRAINT [PK__Stages__03EB7AD8CAA5BA4F] PRIMARY KEY CLUSTERED  ([StageId]) ON [PRIMARY]
+GO
